@@ -24,3 +24,12 @@ Setup
 
 Prepare a directory with images of tomatoes and set the path in train_model.py under the variable original_dir.
 Ensure your images are in .jpg, .jpeg, or .png format.
+
+
+The code is designed to work for training a CNN model to classify images of tomatoes, assuming the following conditions are met:
+
+Correct Environment: Make sure you have the required libraries installed (TensorFlow, scikit-learn, NumPy).
+Directory Structure: The original directory specified (original_dir) must contain images in supported formats (JPEG, PNG). The script will move these images into the training and testing directories, so it expects that the directory exists and contains images.
+Image Content: The script assumes that all images in original_dir are of the same class (tomatoes). If you have multiple classes, you would need to adjust the code to accommodate those.
+File Paths: Ensure the file paths in the code match your local setup. Modify them if necessary.
+Resource Availability: Training a neural network can be resource-intensive. Make sure your machine has enough memory and processing power.
