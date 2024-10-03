@@ -19,3 +19,8 @@ You can install the required packages using pip:
 
 ```bash
 pip install tensorflow scikit-learn numpy
+
+Setup
+
+Prepare a directory with images of tomatoes and set the path in train_model.py under the variable original_dir.
+Ensure your images are in .jpg, .jpeg, or .png format.
