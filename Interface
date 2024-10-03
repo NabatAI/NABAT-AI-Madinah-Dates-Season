@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrigation Recommendation System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+            font-weight: bold;
+        }
+        input, select {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            color: #155724;
+            text-align: center;
+            display: none;
+        }
+        .photo-section {
+            margin-top: 20px;
+        }
+        .photo-section label {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .photo-section label:hover {
+            background-color: #0056b3;
+        }
+        .photo-section input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Irrigation Recommendation System</h1>
+        <form id="irrigationForm">
+            <label for="cropType">Crop Type:</label>
+            <select id="cropType" name="cropType">
+                <option value="alfalfa">Alfalfa</option>
+                <option value="tomatoes">Tomatoes</option>
+                <option value="potatoes">Potatoes</option>
+                <option value="onion">Onion</option>
+                <option value="dates">Dates</option>
+            </select>
+
+            <label for="growthStage">Growth Stage:</label>
+            <select id="growthStage" name="growthStage">
+                <option value="seedling">Seedling</option>
+                <option value="vegetative">Vegetative</option>
+                <option value="flowering">Flowering</option>
+                <option value="fruiting">Fruiting</option>
+                <option value="maturity">Maturity</option>
+            </select>
+
+            <label for="region">Region:</label>
+            <select id="region" name="region">
+                <option value="riyadh">Riyadh</option>
+                <option value="eastern_province">Eastern Province</option>
+                <option value="hail">Hail</option>
+                <option value="al_qassim">Al-Qassim</option>
+                <option value="al_jouf">Al-Jouf</option>
+                <option value="madinah">Madinah</option>
+            </select>
+
+            <div class="photo-section">
+                <label for="plantPhoto">Take a Photo of the Plant:</label>
+                <input type="file" id="plantPhoto" name="plantPhoto" accept="image/*" capture="environment">
+            </div>
+
+            <button type="submit">Get Irrigation Recommendation</button>
+        </form>
+
+        <div id="result" class="result">
+            <p>Optimized Irrigation Needed: <span id="irrigationNeeded"></span> mm</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('irrigationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const cropType = document.getElementById('cropType').value;
+            const growthStage = document.getElementById('growthStage').value;
+            const region = document.getElementById('region').value;
+
+            // Simulate fetching data and calculating irrigation needs
+            // In a real application, this would involve API calls and model predictions
+            const irrigationNeeded = Math.random() * 100; // Random value for demonstration
+
+            document.getElementById('irrigationNeeded').textContent = irrigationNeeded.toFixed(2);
+            document.getElementById('result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
